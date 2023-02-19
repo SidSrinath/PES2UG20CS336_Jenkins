@@ -1,29 +1,7 @@
-pipeline {
-    agent any
+#include <iostream>
+using namespace std;
 
-stages{
-  stage('Build') {
-    steps{
-      sh 'g++ -o PES2UG20CS336 PES2UG20CS336.cpp'
-    }
-  }
-
-  stage('Test') {
-    steps{
-       sh './PES2UG20CS336'
-    }
-  }
-
-  stage('Deploy') {
-    steps{
-      echo 'DEPLOYMENT SUCCESSFUL'
-    }
-  }
+int main(void) {
+  cout << "Hi my name is Siddarth!\n";
+  return 0;
 }
-post {
-    failure {
-        echo 'Pipeline Failed'
-    }
-  }
-}
-
